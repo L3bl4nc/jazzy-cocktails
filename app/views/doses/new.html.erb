@@ -1,7 +1,9 @@
 <h3>Add Ingredient</h3>
 
-<%= simple_form_for(@cocktail, @dose) %>
-  <%= f.label :ingredient %>
-  <%= f.association :ingredient %>
-  <%= f.button :submit %>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.association :ingredient, collection: Ingredient.order(:name), prompt: "Choose an ingredient", include_blank: false %>
+  <%= f.input :description %>
+  <%= f.button :submit, "Add ingredient", class: "btn btn-primary" %>
 <% end %>
+
+<%= link_to 'Back to the list of cocktails', cocktails_path %>
