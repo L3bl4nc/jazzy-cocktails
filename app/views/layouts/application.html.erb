@@ -13,6 +13,24 @@
   </head>
 
   <body>
+    <div>
+      <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand">My Cocktails</a>
+        <%= link_to 'Create a cocktail', new_cocktail_path, class: "btn btn-primary" %>
+      </nav>
+    </div>
     <%= yield %>
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="footer-copyright">
+        Follow me with the links!
+      </div>
+    </div>
   </body>
 </html>

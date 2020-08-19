@@ -1,11 +1,4 @@
 <div>
-  <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand">My Cocktails</a>
-    <%= link_to 'Create a cocktail', new_cocktail_path, class: "btn btn-primary" %>
-  </nav>
-</div>
-
-<div>
 <% @cocktails.each do |cocktail| %>
   <div class="card" style="width: 18rem;">
     <div class="card-body">
