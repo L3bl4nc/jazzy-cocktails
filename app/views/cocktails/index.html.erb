@@ -1,15 +1,18 @@
-<div class="cards">
-<% @cocktails.each do |cocktail| %>
-    <div class="card-category">
-      <%= cocktail.name %>
-      <ul>
-        <% cocktail.doses.each do |dose| %>
-          <li>
-          <%= dose.ingredient.name %>
-          </li>
-        <% end %>
-      </ul>
-      <%= link_to 'See details', cocktail_path(cocktail) %>
-    </div>
-<% end %>
+<div class="container">
+  <h1>There is a lot to drink here!</h1>
+  <div class="cards">
+  <% @cocktails.each do |cocktail| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path("https://res.cloudinary.com/dnygdmomh/image/upload/v1597957674/Cocktails/bloody_caesar_tspfrz.jpg", :width => 250, :height => 350, :crop => :fill) %>)">
+        <%= cocktail.name %>
+        <ul>
+          <% cocktail.doses.each do |dose| %>
+            <li>
+            <%= dose.ingredient.name %>
+            </li>
+          <% end %>
+        </ul>
+        <%= link_to 'See details', cocktail_path(cocktail) %>
+      </div>
+  <% end %>
+  </div>
 </div>
